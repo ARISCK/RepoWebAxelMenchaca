@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@800&family=Oswald&display=swap');
+
+/*diseño general de la web*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", serif;
+    font-size: 20px;
+}
+
+body{
+    background-color: #3d4764;
+    
+}
+
+.header{
+    background-color: #2e4239;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+
+}
+
+.header .logo{
+    cursor: pointer;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.5s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .links-header{
+
+    list-style: none;
+
+}
+
+.header .links-header li{
+
+    display: inline-block;
+    padding: 0 20px;
+    transition: all 0.3s;
+
+}
+
+.header .links-header li:hover{
+    transform: scale(1.1);
+}
+
+
+.header .links-header a{
+    font-size: 30;
+    color: #d2cccc;
+    text-decoration: none;
+}
+
+.header .links-header li a:hover{
+
+    color: #96bd3b;
+
+}
+
+
+
+.ejem{
+    color: blueviolet;
+}
+.color1{
+
+    color: #0b9b58;
+}
