@@ -1,8 +1,76 @@
-osrjnosrn
-spkngobnm
-sdkgnmogn
-woeknfowef
-wenfof
-omfewfn
+body {
+  min-height: 100vh;
+  background-image: url("imagenes_prueba/fondo.WEBP");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-merge en master
+.tarjetas {
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Contenedor principal */
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  width: 50%;
+  max-width: 1200px; /* Limitar el ancho máximo del contenedor */
+}
+
+/* Estilo de cada tarjeta */
+.card {
+  box-shadow: 0 4px 6px #0000001a;
+  overflow: hidden;
+  text-align: center;
+  background-color: #000000;
+}
+
+/* Color del título */
+.titulo-blanco {
+  color: #ffffff;
+}
+
+/* Imagen dentro de la tarjeta */
+.card-header img {
+  width: 80%;
+  height: 80%;
+}
+
+/* Estilo del cuerpo de la tarjeta */
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* responsive */
+@media only screen and (max-width: 1024px) {
+  .contenedor {
+    width: 90%; /* Ajustar el ancho al 90% en pantallas menores a 1024px */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+    width: 90%; /* Ajustar el ancho al 100% en pantallas menores a 768px */
+  }
+}
