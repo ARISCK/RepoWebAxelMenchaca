@@ -61,7 +61,7 @@ body {
   color: #ffffff;
 }
 
-/* responsive */
+/* responsive seccion 1*/
 @media only screen and (max-width: 1024px) {
   .contenedor {
     width: 90%; /* Ajustar el ancho al 90% en pantallas menores a 1024px */
@@ -74,3 +74,46 @@ body {
     width: 90%; /* Ajustar el ancho al 100% en pantallas menores a 768px */
   }
 }
+
+/* sección 2 parte inferior*/
+.nueva-seccion {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Estilo de cada cuadro */
+.cuadro {
+  box-shadow: 0 4px 6px #0000001a;
+  overflow: hidden;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+/* Imagen dentro del cuadro */
+.cuadro img {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive para la sección 2 */
+@media only screen and (max-width: 1024px) {
+  .nueva-seccion {
+    grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas medianas */
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nueva-seccion {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    width: 90%;
+  }
+}
+
+
+
