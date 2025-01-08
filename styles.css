@@ -1,80 +1,304 @@
-@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@800&family=Oswald&display=swap');
-
-/*diseño general de la web*/
-*{
-    box-sizing: border-box;
+* {
     margin: 0;
     padding: 0;
-    font-family: "Oswald", serif;
-    font-size: 20px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
-body{
-    background-color: #3d4764;
+body {
+    /*margin-top: 60px; /* Altura de la cabecera */
+    min-height: 100vh;
+    background-color: #000;
+    background-image: url(https://blogger.googleusercontent.com/img/a/AVvXsEhqzeTOTJm2J-wrSe9kAj3DlAphY5RzFw3W4xf25OPT1AEktfD1Z70sYBclrMDeuD6jAeZzJPByXgH272iG3hxS7AGppznCwS1yzioR77m4J03rVdFLmL3TtLjVmUfaCk-p1D3Jdkj6fp-9U64Tnqg1EMKT9OXpclfVjKrYeqT-OJWdnq9JBh_8ZZKWpsM=s1600-rw);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /*esto ayuda a que no se entre en conflicto entre el header y el final del fondo*/
+    /*agregue lo siguiente cuando estaba haciendo lo del header sticky
+
+    2. Asegúrate de que los Padres No Bloqueen el Sticky
+    Asegúrate de que ningún contenedor padre tenga overflow: hidden,
+     auto, o scroll.*/
+    /*margin: 0;*/
+    padding: 0;
+    overflow: visible;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #00ffdd;
+}
+
+/*AQUI EMPIEZA HEADER<<<--------------------------------------------------*/
+
+
+header {
+    position: sticky;
+    /*esto es para que se quede en la parte de arriba*/
+    top: 0;
+    z-index: 1000;
+    /* Para mantener la cabecera encima de otros elementos */
+    background: linear-gradient(to right, #00da53, #000000);
+    /* Fondo degradado para visibilidad */
+    width: 100%;
+    /* Asegura que abarque el ancho completo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Opcional: sombra para destacar la cabecera */
+}
+
+.navbar_container {
+    position: relative;
+    top: 0;
+    margin: 0px;
+    /* Elimina márgenes */
+    /* padding: 0 0rem; /* Asegura que no haya relleno adicional */
+    /*background-color: #11a33d; */
+    background: linear-gradient(#00da53, #00000000);
+    /* Degradado de verde oscuro a verde claro */
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    /*esto tiene que ver mas abajo con HERO*/
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.navbar .logo a {
+    font-size: 1, 5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: #2eaac0;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: #fff;
+
+}
+
+.action_btn:active {
+    scale: 0.95;
+
+}
+
+
+/*DROPDOWN MENU*/
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: #ffffff44;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.dropdown_menu .action_btn {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+/*HERO*/
+section#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/*AQUI TERMINA HEADER<<<--------------------------------------------------*/
+
+
+
+/*AQUI EMPIEZA EL CUERPO<<<--------------------------------------------------*/
+
+/*ZONA TARJETAS*/
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /*margin-top: 100px;*/
+    margin: 1vh;
+    gap: 2rem;
+}
+
+.card{
+    /*width: 325px;*/
+    width: 50vh;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px #00ff40;
+   /* margin: 20px;*/
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+}
+
+.card-content{
+    padding: 16px;
+}
+
+.card-content h3{
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card-content p{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.3;
     
 }
 
-.header{
-    background-color: #2e4239;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 85px;
-    padding: 5px 10%;
-
-}
-
-.header .logo{
-    cursor: pointer;
-}
-
-.header .logo img{
-    height: 70px;
-    width: auto;
-    transition: all 0.5s;
-}
-
-.header .logo img:hover{
-    transform: scale(1.2);
-}
-
-.header .links-header{
-
-    list-style: none;
-
-}
-
-.header .links-header li{
-
+.card-content .card-btn{
     display: inline-block;
-    padding: 0 20px;
-    transition: all 0.3s;
-
-}
-
-.header .links-header li:hover{
-    transform: scale(1.1);
-}
-
-
-.header .links-header a{
-    font-size: 30;
-    color: #d2cccc;
+    padding: 8px 16px;
+    background-color: #333;
     text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #da0000;
+}
+/*FIN ZONA TARJETAS*/
+
+/*ZONA VIDEO*/
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%; /* Limita el ancho máximo */
+    /*margin: 20px auto; /* Centra el contenedor en la página */
+    aspect-ratio: 16 / 9; /* Mantiene la relación de aspecto */
+    /*background-color: #000; /* Fondo opcional para mayor visibilidad */
+    position: relative;
 }
 
-.header .links-header li a:hover{
+.video-prueba {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border: none; /* Elimina el borde del iframe */
+}
 
-    color: #96bd3b;
+/*FIN ZONA VIDEO*/
+
+/*AQUI TERMINA EL CUERPO<<<--------------------------------------------------*/
+
+
+
+
+/*RESPONSIVE DESING*/
+
+@media(max-width: 992px) {
+
+    /*CABECERA*/
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+   
 
 }
 
+@media(max-width: 576px) {
+    
+    /*CABECERA*/
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
 
+     /*VIDEO*/
+     .video-prueba {
+        
+        width: 95%;
+        height: 95%;
+        
+    }
+    
 
-.ejem{
-    color: blueviolet;
-}
-.color1{
-
-    color: #0b9b58;
 }
